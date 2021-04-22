@@ -36,15 +36,15 @@ namespace EkdObjViewer
         private int[] AtkIndexes_Up = { 4, 5, 6, 7 };
         private int[] AtkIndexes_Left = { 8, 9, 10, 11 };
 
-        private int[] MovIndexes_Down = { 100, 101 };
-        private int[] MovIndexes_Up = { 102, 103 };
-        private int[] MovIndexes_Left = { 104, 105 };
+        private int[] MovIndexes_Down = { 100, 100, 101, 101 };
+        private int[] MovIndexes_Up = { 102, 102, 103, 103 };
+        private int[] MovIndexes_Left = { 104, 104, 105, 105 };
 
         private int[] DefIndexes_Down = { 106, 106, 200, 200 };
         private int[] DefIndexes_Up = { 107, 107, 201, 201 };
         private int[] DefIndexes_Left = { 108, 108, 202, 202 };
 
-        private int[] PinchIndexes = { 109, 110 };
+        private int[] PinchIndexes = { 109, 109, 110, 110 };
         private int[] DamageIndexes = { 106, 106, 203, 203 };
         private int[] PoseIndexes = { 106, 108, 107, 400, 106, 204, 204, 204  };
 
@@ -379,7 +379,7 @@ namespace EkdObjViewer
                     x += deltaX;
                     x += deltaX2;
 
-                    g.DrawString("반좌곡", Font, Brushes.Black, x + 20, y - 20);
+                    g.DrawString("반좌곡", Font, Brushes.Black, x + 30, y - 20);
                     g.DrawImage(_frontLoader.GetFrameImage(11), new Rectangle(x, y, 48, 64));
                     x += deltaX;
                     g.DrawImage(_backLoader.GetFrameImage(11), new Rectangle(x, y, 48, 64));
@@ -404,7 +404,7 @@ namespace EkdObjViewer
                     x += deltaX;
                     x += deltaX2;
 
-                    g.DrawString("포박", Font, Brushes.Black, x + 20, y - 20);
+                    g.DrawString("포박", Font, Brushes.Black, x + 40, y - 20);
                     g.DrawImage(_frontLoader.GetFrameImage(14), new Rectangle(x, y, 48, 64));
                     x += deltaX;
                     g.DrawImage(_backLoader.GetFrameImage(14), new Rectangle(x, y, 48, 64));
