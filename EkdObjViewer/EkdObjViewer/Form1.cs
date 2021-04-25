@@ -48,6 +48,8 @@ namespace EkdObjViewer
         private int[] DamageIndexes = { 106, 106, 203, 203 };
         private int[] PoseIndexes = { 106, 108, 107, 400, 106, 204, 204, 204  };
 
+        private int[] PmapMoveIndexes = { 1, 1, 2, 2 };
+
         private int _currentFrame;
 
         private Timer _animPlayTimer;
@@ -313,9 +315,9 @@ namespace EkdObjViewer
                     x += deltaX2;
 
                     g.DrawString("걷기", Font, Brushes.Black, x + 40, y - 20);
-                    g.DrawImage(_frontLoader.GetFrameImage(frame % 2), new Rectangle(x, y, 48, 64));
+                    g.DrawImage(_frontLoader.GetFrameImage(PmapMoveIndexes[frame % PmapMoveIndexes.Length]), new Rectangle(x, y, 48, 64));
                     x += deltaX;
-                    g.DrawImage(_backLoader.GetFrameImage(frame % 2), new Rectangle(x, y, 48, 64));
+                    g.DrawImage(_backLoader.GetFrameImage(PmapMoveIndexes[frame % PmapMoveIndexes.Length]), new Rectangle(x, y, 48, 64));
                     x += deltaX;
                     x += deltaX2;
 
@@ -466,6 +468,8 @@ namespace EkdObjViewer
                 var imageArray = new Image[] {
                 GetPmapObjFrame(0, Color.White),
                 GetPmapObjFrame(1, Color.White),
+                GetPmapObjFrame(2, Color.White),
+                GetPmapObjFrame(3, Color.White),
             };
 
                 double delay = 0;
